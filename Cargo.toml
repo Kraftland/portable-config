@@ -1,0 +1,14 @@
+[package]
+name = "portable-config"
+version = "21.0"
+edition = "2024"
+rust-version = "1.98"
+description = "Configuration crate for the Portable Sandbox"
+documentation = "https://github.com/Kraftland/portable"
+readme = "README.md"
+homepage = "https://github.com/Kraftland/portable-config"
+repository = "https://github.com/Kraftland/portable-config"
+license = "GPL-3.0-or-later"
+keywords = ["Portable", "sandbox", "config", "serde"]
+
+[dependencies]
