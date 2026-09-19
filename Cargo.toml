@@ -1,6 +1,6 @@
 [package]
 name = "portable-config"
-version = "21.0"
+version = "21.0.0"
 edition = "2024"
 rust-version = "1.98"
 description = "Configuration crate for the Portable Sandbox"
