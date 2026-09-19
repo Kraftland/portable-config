@@ -12,3 +12,4 @@ license = "GPL-3.0-or-later"
 keywords = ["Portable", "sandbox", "config", "serde"]
 
 [dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
