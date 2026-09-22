@@ -1,5 +1,5 @@
-impl From<crate::Config> for Vec<super::DynamicPermission> {
-	fn from(value: crate::Config) -> Self {
+impl From<&crate::Config> for Vec<super::DynamicPermission> {
+	fn from(value: &crate::Config) -> Self {
 		let mut ret: Vec<super::DynamicPermission> = vec![];
 
 		let system: Vec<super::DynamicPermission> = (&value.system).into();
