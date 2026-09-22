@@ -6,4 +6,7 @@ pub enum ConfigError {
 	),
 	#[error("Malformed TOML configuration file: {0:#?}")]
 	MalformedTOMLConfig(toml::de::Error),
+
+	#[error("Malformed Bash-style legacy configuration file: {0:#?}")]
+	MalformedBashConfig(portable_legacy_conf::Error),
 }
