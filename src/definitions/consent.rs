@@ -15,6 +15,7 @@ pub enum DynamicPermission {
 	Kvm,
 	Input,
 	Camera,
+	DisableLandlock,
 }
 
 impl DynamicPermission {
@@ -41,6 +42,9 @@ impl DynamicPermission {
 			Self::Camera		=> {
 				"device.camera"
 			}
+			Self::DisableLandlock	=> {
+				"lockdown.nolandlock"
+			}
 		}
 	}
 }
@@ -65,6 +69,10 @@ impl std::fmt::Display for DynamicPermission {
 			}
 			DynamicPermission::Camera	=> {
 				f.write_str("Access Camera")
+			}
+			DynamicPermission::DisableLandlock
+							=> {
+				f.write_str("Mount namespace")
 			}
 		}
 	}
