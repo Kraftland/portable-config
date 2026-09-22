@@ -1,3 +1,20 @@
+impl From<crate::Config> for Vec<super::DynamicPermission> {
+	fn from(value: crate::Config) -> Self {
+		let mut ret: Vec<super::DynamicPermission> = vec![];
+
+		let system: Vec<super::DynamicPermission> = (&value.system).into();
+		ret.extend(system);
+
+		let privacy: Vec<super::DynamicPermission> = (&value.privacy).into();
+		ret.extend(privacy);
+
+		let advanced: Vec<super::DynamicPermission> = (&value.advanced).into();
+		ret.extend(advanced);
+
+		ret
+	}
+}
+
 impl From<&crate::definitions::SysMgmt> for Vec<super::DynamicPermission> {
 	fn from(value: &crate::definitions::SysMgmt) -> Self {
 		let mut ret = vec![];
