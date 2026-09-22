@@ -16,6 +16,8 @@ pub enum DynamicPermission {
 	Input,
 	Camera,
 	DisableLandlock,
+	MediaPlayer2(Vec<String>),
+	Debugging,
 }
 
 impl DynamicPermission {
@@ -45,6 +47,12 @@ impl DynamicPermission {
 			Self::DisableLandlock	=> {
 				"lockdown.nolandlock"
 			}
+			Self::MediaPlayer2(_)	=> {
+				"ipc.mpris"
+			}
+			Self::Debugging		=> {
+				"debugging"
+			}
 		}
 	}
 }
@@ -73,6 +81,15 @@ impl std::fmt::Display for DynamicPermission {
 			DynamicPermission::DisableLandlock
 							=> {
 				f.write_str("Mount namespace")
+			}
+			DynamicPermission::MediaPlayer2(v)
+							=> {
+				f.write_fmt(
+					format_args!("Control Media Players: {v:?}")
+				)
+			}
+			DynamicPermission::Debugging	=> {
+				f.write_str("Perform debugging")
 			}
 		}
 	}
