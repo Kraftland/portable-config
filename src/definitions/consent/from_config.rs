@@ -43,3 +43,23 @@ impl From<&crate::definitions::Privacy> for Vec<super::DynamicPermission> {
 		ret
 	}
 }
+
+impl From<&crate::definitions::Advanced> for Vec<super::DynamicPermission> {
+	fn from(value: &crate::definitions::Advanced) -> Self {
+		let mut ret = vec![];
+
+		if value.mpris_names.len() > 0 {
+			ret.push(
+				super::DynamicPermission::MediaPlayer2(value.mpris_names.clone())
+			);
+		}
+
+		if value.allow_debug {
+			ret.push(
+				super::DynamicPermission::Debugging
+			);
+		}
+
+		ret
+	}
+}
