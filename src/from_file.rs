@@ -20,7 +20,9 @@ impl crate::definitions::Config {
 			.map_err(crate::errors::ConfigError::MalformedTOMLConfig)
 			?;
 
-		Ok(config)
+		Ok(
+			config.into()
+		)
 	}
 
 	/**
