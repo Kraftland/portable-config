@@ -56,6 +56,22 @@ impl DynamicPermission {
 			}
 		}
 	}
+
+	/**
+		Allow list certain permissions because not granting will break apps.
+
+		Currently only landlock.
+	*/
+	pub fn default_allow(&self) -> bool {
+		match &self {
+			Self::DisableLandlock	=> {
+				true
+			}
+			_			=> {
+				false
+			}
+		}
+	}
 }
 
 impl std::fmt::Display for DynamicPermission {
