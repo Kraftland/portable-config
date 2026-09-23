@@ -1,4 +1,4 @@
-mod consent;
+pub mod consent;
 
 use serde::{Deserialize, Deserializer};
 use serde::de::Error;
