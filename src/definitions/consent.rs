@@ -8,6 +8,7 @@ mod from_config;
 	The fields are not exposed, retrieve info from id and display_name. This also implements
 	std::fmt::Display to present.
 */
+#[derive(PartialEq, Eq)]
 pub enum DynamicPermission {
 	Notifications,
 	Inhibit,
