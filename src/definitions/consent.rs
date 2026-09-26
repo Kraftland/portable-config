@@ -1,5 +1,5 @@
-mod from_config;
-mod from_str;
+pub mod from_config;
+pub mod from_str;
 
 /**
 	This enum represents a single instance of configuration that needs user consent.
