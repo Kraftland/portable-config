@@ -67,7 +67,7 @@ impl From<&crate::definitions::Advanced> for Vec<super::DynamicPermission> {
 
 		if value.mpris_names.len() > 0 {
 			ret.push(
-				super::DynamicPermission::MediaPlayer2(value.mpris_names.clone())
+				super::DynamicPermission::MediaPlayer2
 			);
 		}
 
