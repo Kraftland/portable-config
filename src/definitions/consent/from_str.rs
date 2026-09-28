@@ -9,7 +9,7 @@ impl TryFrom<&str> for super::DynamicPermission
 			"device.input"		=> Ok(Self::Input),
 			"device.camera"		=> Ok(Self::Camera),
 			"lockdown.nolandlock"	=> Ok(Self::DisableLandlock),
-			"ipc.mpris"		=> Ok(Self::MediaPlayer2(vec![])),
+			"ipc.mpris"		=> Ok(Self::MediaPlayer2),
 			"debugging"		=> Ok(Self::Debugging),
 			v			=> {
 				Err(
