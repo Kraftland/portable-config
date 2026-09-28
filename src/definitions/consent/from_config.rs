@@ -53,7 +53,7 @@ impl From<&crate::definitions::Privacy> for Vec<super::DynamicPermission> {
 			ret.push(super::DynamicPermission::DisableLandlock);
 		};
 
-		if value.classic_notif || value.push_notification {
+		if value.classic_notif {
 			ret.push(super::DynamicPermission::Notifications);
 		};
 
