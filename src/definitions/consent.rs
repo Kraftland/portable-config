@@ -9,7 +9,7 @@ pub mod from_str;
 	The fields are not exposed, retrieve info from id and display_name. This also implements
 	std::fmt::Display to present.
 */
-#[derive(PartialEq, Eq)]
+#[derive(PartialEq, Eq, Hash)]
 pub enum DynamicPermission {
 	Notifications,
 	Inhibit,
