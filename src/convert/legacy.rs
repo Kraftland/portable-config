@@ -22,7 +22,6 @@ impl From<portable_legacy_conf::Config> for crate::Config {
 		crate::Config {
 			metadata:		crate::definitions::Metadata {
 				sandbox_id:		value.app_id,
-				display_name:		value.friendly_name,
 				state_directory:	value.state_dir,
 			},
 			exec:			crate::definitions::Exec {

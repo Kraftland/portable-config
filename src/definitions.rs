@@ -36,8 +36,6 @@ pub struct Metadata {
 	#[serde(alias = "appID")]
 	// Check needed
 	pub sandbox_id:		String,
-	#[serde(alias = "friendlyName")]
-	pub display_name:	String,
 	#[serde(alias = "stateDirectory")]
 	pub state_directory:	String,
 }
