@@ -77,37 +77,97 @@ impl DynamicPermission {
 
 impl std::fmt::Display for DynamicPermission {
 	fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+		use gettextrs::{textdomain, bind_textdomain_codeset};
+
+		match textdomain("portable-config") {
+			Ok(_)	=> {}
+			Err(e)	=> {
+				return f.write_fmt(
+					format_args!(
+						"Could not translate permission: {}, {}",
+						self,
+						e,
+					)
+				);
+			}
+		};
+
+		match bind_textdomain_codeset("portable-config", "UTF-8") {
+			Ok(_)	=> {}
+			Err(e)	=> {
+				return f.write_fmt(
+					format_args!(
+						"Could not translate permission: {}, {}",
+						self,
+						e,
+					)
+				);
+			}
+		};
+
 		match self {
 			DynamicPermission::Notifications	=> {
-				f.write_str("Send notifications")
+				f.write_str(
+					gettextrs::gettext("Send notifications").as_str()
+				)
 			}
 			DynamicPermission::Inhibit	=> {
-				f.write_str("Inhibit system suspend and shutdown")
+				f.write_str(
+					gettextrs::gettext("Inhibit system suspend and shutdown")
+						.as_str()
+				)
 			}
 			DynamicPermission::DGPU		=> {
-				f.write_str("Render on Discrete GPU")
+				f.write_str(
+					gettextrs::gettext("Render on Discrete GPU")
+						.as_str()
+				)
 			}
 			DynamicPermission::Kvm		=> {
-				f.write_str("Run a Kernel Virtual Machine")
+				f.write_str(
+					gettextrs::gettext(
+						"Run a Kernel Virtual Machine"
+					)
+						.as_str()
+				)
 			}
 			DynamicPermission::Input	=> {
-				f.write_str("Access and manage Input Devices")
+				f.write_str(
+					gettextrs::gettext("Access and manage Input Devices")
+						.as_str()
+				)
 			}
 			DynamicPermission::Camera	=> {
-				f.write_str("Access Camera")
+				f.write_str(
+					gettextrs::gettext("Access Camera")
+						.as_str()
+				)
 			}
 			DynamicPermission::DisableLandlock
 							=> {
-				f.write_str("Mount namespace")
+				f.write_str(
+					gettextrs::gettext(
+						"Mount namespace"
+					)
+						.as_str()
+				)
 			}
 			DynamicPermission::MediaPlayer2
 							=> {
-				f.write_fmt(
-					format_args!("Control Media Players")
+				f.write_str(
+					gettextrs::gettext(
+						"Control Media Players"
+					)
+						.as_str()
 				)
 			}
 			DynamicPermission::Debugging	=> {
-				f.write_str("Perform debugging")
+				f.write_str(
+					gettextrs::gettext(
+						"Perform debugging"
+					)
+						.as_str()
+				)
 			}
 		}
 	}
