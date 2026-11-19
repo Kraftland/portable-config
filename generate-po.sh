@@ -9,15 +9,16 @@ xgettext \
 	--copyright-holder="Kimiblock Moe, Kraftland Organisation Founder" \
 	--language=Rust \
 	--from-code=UTF-8 \
-	--output-dir po
+	--output=po/messages.pot
 
 for file in $(find po/ -maxdepth 1 -type f); do
-	if [[ "${file}" = "po/messages.po" ]]; then
+	if [[ "${file}" = "po/messages.pot" ]]; then
 		continue
 	fi
 
 	msgmerge \
 		--update \
+		--backup=none \
 		"${file}" \
-		po/messages.po
+		po/messages.pot
 done
