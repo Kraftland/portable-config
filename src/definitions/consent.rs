@@ -77,34 +77,6 @@ impl DynamicPermission {
 
 impl std::fmt::Display for DynamicPermission {
 	fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-		use gettextrs::{textdomain, bind_textdomain_codeset};
-
-		match textdomain("org.kraftland.portable") {
-			Ok(_)	=> {}
-			Err(e)	=> {
-				return f.write_fmt(
-					format_args!(
-						"Could not translate permission: {}, {}",
-						self,
-						e,
-					)
-				);
-			}
-		};
-
-		match bind_textdomain_codeset("org.kraftland.portable", "UTF-8") {
-			Ok(_)	=> {}
-			Err(e)	=> {
-				return f.write_fmt(
-					format_args!(
-						"Could not translate permission: {}, {}",
-						self,
-						e,
-					)
-				);
-			}
-		};
-
 		match self {
 			DynamicPermission::Notifications	=> {
 				f.write_str(
