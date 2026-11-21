@@ -83,8 +83,6 @@ pub struct SysMgmt {
 	#[serde(alias = "inhibitOnBehalf")]
 	pub conduct_inhibit:	bool,
 
-	pub uclamp_max:		u32,
-
 	#[serde(alias = "deviceAllow")]
 	#[serde(deserialize_with = "deserialise_device_allow")]
 	pub device_allow:	Vec<DeviceAllow>,
@@ -95,7 +93,6 @@ impl Default for SysMgmt {
 		Self {
 			allow_inhibit: false,
 			conduct_inhibit: false,
-			uclamp_max: 100,
 			device_allow: vec![],
 		}
 	}

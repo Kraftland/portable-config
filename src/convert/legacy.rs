@@ -37,7 +37,6 @@ impl From<portable_legacy_conf::Config> for crate::Config {
 			system:			crate::definitions::SysMgmt {
 				allow_inhibit:		false,
 				conduct_inhibit:	false,
-				uclamp_max:		100,
 				device_allow:		device_allow,
 			},
 			network:		crate::definitions::Network {
