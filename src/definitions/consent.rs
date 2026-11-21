@@ -79,7 +79,7 @@ impl std::fmt::Display for DynamicPermission {
 	fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
 		use gettextrs::{textdomain, bind_textdomain_codeset};
 
-		match textdomain("portable-config") {
+		match textdomain("org.kraftland.portable") {
 			Ok(_)	=> {}
 			Err(e)	=> {
 				return f.write_fmt(
@@ -92,7 +92,7 @@ impl std::fmt::Display for DynamicPermission {
 			}
 		};
 
-		match bind_textdomain_codeset("portable-config", "UTF-8") {
+		match bind_textdomain_codeset("org.kraftland.portable", "UTF-8") {
 			Ok(_)	=> {}
 			Err(e)	=> {
 				return f.write_fmt(
