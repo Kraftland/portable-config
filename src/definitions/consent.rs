@@ -147,7 +147,7 @@ impl std::fmt::Display for DynamicPermission {
 			}
 			Self::FileForwarding		=> {
 				f.write_str(
-					gettextrs::gettext("Read selected external files")
+					gettextrs::gettext("Read and write selected external files")
 						.as_str()
 				)
 			}
