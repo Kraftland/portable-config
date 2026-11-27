@@ -49,6 +49,7 @@ impl From<portable_legacy_conf::Config> for crate::Config {
 				x11_compat:		! value.wayland,
 				classic_notif:		false,
 				push_notification:	false,
+				file_forwarding:	false,
 			},
 			advanced:		crate::definitions::Advanced {
 				use_zink:		value.zink,
