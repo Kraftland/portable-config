@@ -186,6 +186,8 @@ pub struct Privacy {
 	pub classic_notif:	bool,
 
 	pub push_notification:	bool,
+
+	pub file_forwarding:	bool,
 }
 
 #[derive(Debug, Deserialize)]
@@ -253,6 +255,7 @@ impl Default for Privacy {
 			x11_compat:		false,
 			classic_notif:		false,
 			push_notification:	true,
+			file_forwarding:	false,
 		}
 	}
 }
