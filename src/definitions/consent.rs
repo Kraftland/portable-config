@@ -20,6 +20,7 @@ pub enum DynamicPermission {
 	DisableLandlock,
 	MediaPlayer2,
 	Debugging,
+	FileForwarding,
 }
 
 impl DynamicPermission {
@@ -54,6 +55,9 @@ impl DynamicPermission {
 			}
 			Self::Debugging		=> {
 				"debugging"
+			}
+			Self::FileForwarding	=> {
+				"fileforwarding"
 			}
 		}
 	}
@@ -138,6 +142,12 @@ impl std::fmt::Display for DynamicPermission {
 					gettextrs::gettext(
 						"Perform debugging"
 					)
+						.as_str()
+				)
+			}
+			Self::FileForwarding		=> {
+				f.write_str(
+					gettextrs::gettext("Read selected external files")
 						.as_str()
 				)
 			}
