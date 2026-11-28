@@ -11,6 +11,7 @@ impl TryFrom<&str> for super::DynamicPermission
 			"lockdown.nolandlock"	=> Ok(Self::DisableLandlock),
 			"ipc.mpris"		=> Ok(Self::MediaPlayer2),
 			"debugging"		=> Ok(Self::Debugging),
+			"fileforwarding"	=> Ok(Self::FileForwarding),
 			v			=> {
 				Err(
 					ConversionError::UnknownID(v.into())
