@@ -57,6 +57,10 @@ impl From<&crate::definitions::Privacy> for Vec<super::DynamicPermission> {
 			ret.push(super::DynamicPermission::Notifications);
 		};
 
+		if value.file_forwarding {
+			ret.push(super::DynamicPermission::FileForwarding);
+		}
+
 		ret
 	}
 }
